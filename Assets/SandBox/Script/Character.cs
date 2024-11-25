@@ -2,14 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Character : MonoBehaviour
+public class Character : Singleton<Character>
 {
     CharacterController _characterController;
     Interactable _interactable;
+    Talkable _talkable;
+    public Grabbable ObjectInHand { get; private set; }
 
     [SerializeField] float moveSpeed;
     [SerializeField] float rotSpeed;
-
+    [SerializeField] Transform hand;
 
     private void Start()
     {
@@ -65,7 +67,25 @@ public class Character : MonoBehaviour
 
     void CheckTalkables()
     {
+        Physics.SphereCast(Camera.main.transform.position, .25f, Camera.main.transform.forward, out RaycastHit hit, 2, LayerMask.GetMask("Talkable"));
+        if (hit.collider != null)
+        {
+            var newTalkable = hit.collider.gameObject.GetComponentInParent<Talkable>();
 
+            if (newTalkable == _talkable)
+                return;
+
+            if (_talkable != null)
+                _talkable.HideTooltip();
+
+            _talkable = newTalkable;
+            _talkable.ShowTooltip();
+        }
+        else if (_talkable != null)
+        {
+            _talkable.HideTooltip();
+            _talkable = null;
+        }
     }
 
     void CheckInputs()
@@ -80,7 +100,7 @@ public class Character : MonoBehaviour
         //Press F to talk
         if (Input.GetKeyDown(KeyCode.F))
         {
-
+            _talkable.Interact();
         }
     }
 
@@ -91,6 +111,29 @@ public class Character : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E) && _interactable != null)
         {
             _interactable.Interact();
+        }
+
+        //Press X to Release
+        if (Input.GetKeyDown(KeyCode.X))
+        {
+            Release();
+        }
+    }
+
+    public void Grab(Grabbable grabbedObject)
+    {
+        Release();
+
+        ObjectInHand = grabbedObject;
+        ObjectInHand.Grab(hand);
+    }
+
+    public void Release()
+    {
+        if (ObjectInHand != null)
+        {
+            ObjectInHand.Release();
+            ObjectInHand = null;
         }
     }
 }

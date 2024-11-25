@@ -1,13 +1,10 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+public class Talkable : MonoBehaviour
 {
     [SerializeField] GameObject tooltip;
-
-    public event Action OnInteract;
 
     private void Awake()
     {
@@ -26,6 +23,6 @@ public class Interactable : MonoBehaviour
 
     public void Interact()
     {
-        OnInteract?.Invoke();
+        Destroy(transform.root.gameObject);
     }
 }
