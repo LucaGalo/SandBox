@@ -15,7 +15,7 @@ public class Character : Singleton<Character>
 
     private void Start()
     {
-        _characterController = GetComponent<CharacterController>();
+        //_characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
@@ -33,7 +33,7 @@ public class Character : Singleton<Character>
         dir.Normalize();
         dir *= moveSpeed * Time.deltaTime;
         dir = transform.TransformVector(dir);
-        _characterController.SimpleMove(dir);
+        GetComponent<Rigidbody>().velocity = dir;
     }
 
     void UpdateRotation()

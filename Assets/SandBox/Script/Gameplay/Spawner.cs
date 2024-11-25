@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] Spawnable spawnPrefab;
+    [SerializeField] Spawnable[] spawnPrefabs;
     [SerializeField] Transform[] spawnPoints;
     [SerializeField] int maxInstances;
 
@@ -22,7 +22,8 @@ public class Spawner : MonoBehaviour
     {
         for (int i = 0; i < maxInstances; i++)
         {
-            var instance = Instantiate(spawnPrefab);
+            int prefabIndex = Random.Range(0, spawnPrefabs.Length);
+            var instance = Instantiate(spawnPrefabs[prefabIndex]);
             instance.Despawn();
             pool.Enqueue(instance);
         }
@@ -48,16 +49,16 @@ public class Spawner : MonoBehaviour
     {
         if (pool.TryDequeue(out Spawnable instance))
         {
-            int spawnIndex = Random.Range(0, freeSpawnPoints.Count - 1);
+            int spawnIndex = Random.Range(0, freeSpawnPoints.Count);
             var spawnPoint = freeSpawnPoints[spawnIndex];
             freeSpawnPoints.RemoveAt(spawnIndex);
 
             instanceSpawnerPair.Add(instance, spawnPoint);
-            instance.Spawn();
             instance.transform.parent = spawnPoint;
             instance.transform.localPosition = Vector3.zero;
             instance.transform.localRotation = Quaternion.identity;
             instance.transform.localScale = Vector3.one;
+            instance.Spawn();
         }
     }
 
