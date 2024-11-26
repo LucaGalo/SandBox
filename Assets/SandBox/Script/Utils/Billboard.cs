@@ -4,7 +4,17 @@ public class Billboard : MonoBehaviour
 {
     [SerializeField] bool lockXZ;
 
+    private void OnEnable()
+    {
+        LookPlayer();
+    }
+
     private void Update()
+    {
+        LookPlayer();
+    }
+
+    void LookPlayer()
     {
         var target = Camera.main.transform.position;
         if (lockXZ)
