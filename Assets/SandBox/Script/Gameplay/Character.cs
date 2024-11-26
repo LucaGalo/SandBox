@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class Character : Singleton<Character>
 {
-    CharacterController _characterController;
+    Rigidbody _rigidBody;
     Interactable _interactable;
     Talkable _talkable;
+    float vRot;
+
     public Grabbable ObjectInHand { get; private set; }
 
     [SerializeField] float moveSpeed;
@@ -15,31 +17,38 @@ public class Character : Singleton<Character>
 
     private void Start()
     {
-        //_characterController = GetComponent<CharacterController>();
+        _rigidBody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
         UpdatePosition();
-        UpdateRotation();
-        CheckInputs();
     }
+
 
     void UpdatePosition()
     {
         var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         dir.Normalize();
-        dir *= moveSpeed * Time.deltaTime;
+        dir *= moveSpeed * Time.fixedDeltaTime;
         dir = transform.TransformVector(dir);
-        GetComponent<Rigidbody>().velocity = dir;
+        _rigidBody.velocity = dir;
+    }
+    
+    private void Update()
+    {
+        UpdateRotation();
+        CheckInputs();
     }
 
     void UpdateRotation()
     {
-        transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * rotSpeed);
-        Camera.main.transform.Rotate(Vector3.right * -Input.GetAxis("Mouse Y") * rotSpeed);
+        transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * rotSpeed * Time.deltaTime); 
+        vRot -= Input.GetAxis("Mouse Y") * rotSpeed * Time.deltaTime;
+        vRot = Mathf.Clamp(vRot, -60, 60);
+        Camera.main.transform.localRotation = Quaternion.Euler(Vector3.right * vRot);
     }
 
     void CheckInteractables()

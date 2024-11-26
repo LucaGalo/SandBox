@@ -1418,6 +1418,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 800862860695430766, guid: aaf5a65f1ad5798429bcbe973a091608, type: 3}
+      propertyPath: rotSpeed
+      value: 500
+      objectReference: {fileID: 0}
+    - target: {fileID: 800862860695430766, guid: aaf5a65f1ad5798429bcbe973a091608, type: 3}
+      propertyPath: moveSpeed
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 1183884408317661599, guid: aaf5a65f1ad5798429bcbe973a091608, type: 3}
       propertyPath: m_Constraints
       value: 116
