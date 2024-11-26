@@ -106,10 +106,10 @@ Material:
     m_Ints: []
     m_Floats:
     - Vector1_2EE2CB80: 33.95
-    - Vector1_37163E29: 1.24
-    - Vector1_AE9DFBD: 0.97
+    - Vector1_37163E29: 2.32
+    - Vector1_AE9DFBD: 2.95
     - Vector1_D65B033B: 1.72
-    - Vector1_E266B039: 0
+    - Vector1_E266B039: 6.29
     - _AlphaClip: 0
     - _AlphaToMask: 0
     - _Blend: 0
@@ -133,6 +133,8 @@ Material:
     - _QueueControl: 0
     - _QueueOffset: 0
     - _ReceiveShadows: 1
+    - _SineIntensity: 0
+    - _SineSpeed: 1.26
     - _Smoothness: 0.5
     - _SmoothnessTextureChannel: 0
     - _SpecularHighlights: 1
@@ -143,7 +145,7 @@ Material:
     - _ZWrite: 1
     m_Colors:
     - Color_23C9B10D: {r: 0.04561229, g: 0.14495295, b: 0.38679245, a: 0}
-    - Color_63659391: {r: 0.8705505, g: 0.21763763, b: 0, a: 0}
+    - Color_63659391: {r: 0.7735849, g: 0.38261384, b: 0, a: 0}
     - Color_A2AAE5B5: {r: 0.11372546, g: 0.62745106, b: 0.8352941, a: 0}
     - Vector2_C848BFFB: {r: 0.25, g: 0.25, b: 0, a: 0}
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
