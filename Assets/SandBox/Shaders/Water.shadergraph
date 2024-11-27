@@ -359,20 +359,6 @@
         {
             "m_OutputSlot": {
                 "m_Node": {
-                    "m_Id": "1b7f2fc160a649a3a31e394bfab84429"
-                },
-                "m_SlotId": 0
-            },
-            "m_InputSlot": {
-                "m_Node": {
-                    "m_Id": "c7e2d32dba9b49a3a50bb03456ae4ecf"
-                },
-                "m_SlotId": 1
-            }
-        },
-        {
-            "m_OutputSlot": {
-                "m_Node": {
                     "m_Id": "22b87fe8613546e7bffe4c3c4eeb9bff"
                 },
                 "m_SlotId": 0
@@ -1129,8 +1115,8 @@
     ],
     "m_VertexContext": {
         "m_Position": {
-            "x": 2284.0,
-            "y": 397.0
+            "x": 4315.0,
+            "y": 366.0
         },
         "m_Blocks": [
             {
@@ -1146,8 +1132,8 @@
     },
     "m_FragmentContext": {
         "m_Position": {
-            "x": 2287.0,
-            "y": 595.0
+            "x": 4318.0,
+            "y": 564.0
         },
         "m_Blocks": [
             {
@@ -1870,10 +1856,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 3128.0,
-            "y": 333.0000305175781,
-            "width": 208.000244140625,
-            "height": 301.9999694824219
+            "x": 4127.0,
+            "y": 622.9999389648438,
+            "width": 126.0,
+            "height": 118.0
         }
     },
     "m_Slots": [
@@ -1893,7 +1879,7 @@
         "x"
     ],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -2482,10 +2468,10 @@
         "m_Expanded": true,
         "m_Position": {
             "serializedVersion": "2",
-            "x": 2238.0,
-            "y": 779.0,
+            "x": 3289.0,
+            "y": 403.9999694824219,
             "width": 120.0,
-            "height": 149.0
+            "height": 149.00003051757813
         }
     },
     "m_Slots": [
@@ -4808,7 +4794,7 @@
         "take away"
     ],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -6348,7 +6334,7 @@
         "opposite"
     ],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -6392,7 +6378,7 @@
         "limit"
     ],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -6760,7 +6746,7 @@
     ],
     "synonyms": [],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {
@@ -7088,7 +7074,7 @@
         "divided by"
     ],
     "m_Precision": 0,
-    "m_PreviewExpanded": true,
+    "m_PreviewExpanded": false,
     "m_DismissedVersion": 0,
     "m_PreviewMode": 0,
     "m_CustomColors": {

@@ -258,6 +258,10 @@ MonoBehaviour:
     sprite: {fileID: 21300000, guid: 91f2619938c8252479547f1fc9f5c7ac, type: 3}
     label: Bucket is full
     labelColor: {r: 0.4811321, g: 0.4811321, b: 0.4811321, a: 1}
+  messages:
+  - Ciao bello
+  - ALALLAA
+  - QWEQWSADAS
 --- !u!1 &5435189471314229729
 GameObject:
   m_ObjectHideFlags: 0

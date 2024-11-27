@@ -203,12 +203,12 @@ Material:
     - _BlendModePreserveSpecular: 1
     - _BlendSrc: 1
     - _BlendSrcAlpha: 1
-    - _Brightness: 123.8
+    - _Brightness: 1
     - _BumpScale: 1
     - _ClearCoatMask: 0
     - _ClearCoatSmoothness: 0
     - _ColorGrading: 1
-    - _Contrast: 3.1
+    - _Contrast: 1
     - _Cull: 2
     - _Cutoff: 0.5
     - _DetailAlbedoMapScale: 1
@@ -253,7 +253,7 @@ Material:
     - _OutlineFadeMin: 0.25
     - _OutlineNoise: -1
     - _OutlineSize: 15
-    - _OutlineTab: 1
+    - _OutlineTab: 0
     - _Parallax: 0.005
     - _QueueOffset: 0
     - _ReceiveShadows: 1
@@ -263,7 +263,7 @@ Material:
     - _RimSize: 0.87
     - _RimSmoothness: 0.5
     - _RimThresholdOffset: 0.753
-    - _Saturation: 31.08
+    - _Saturation: 1
     - _SketchMapScale: 1
     - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
@@ -298,11 +298,11 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GoochBrightColor: {r: 1, g: 0.9932663, b: 0.6933962, a: 1}
-    - _GoochDarkColor: {r: 0.9245283, g: 0.81813806, b: 0.49279103, a: 1}
-    - _IridescenceColor: {r: 0.9150943, g: 0.77458346, b: 0.16834284, a: 0.5}
+    - _GoochBrightColor: {r: 1, g: 1, b: 1, a: 1}
+    - _GoochDarkColor: {r: 1, g: 0.9293739, b: 0.7122642, a: 1}
+    - _IridescenceColor: {r: 0.8018868, g: 0.045212816, b: 0, a: 0.62352943}
     - _OutlineColor: {r: 0.2204076, g: 0.31319064, b: 0.3679245, a: 1}
-    - _RimBrightColor: {r: 0.9339623, g: 0.07589984, b: 0, a: 1}
+    - _RimBrightColor: {r: 1, g: 1, b: 1, a: 1}
     - _RimColor: {r: 0.8018868, g: 0.56550395, b: 0, a: 1}
     - _RimDarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}

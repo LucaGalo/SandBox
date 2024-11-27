@@ -6,7 +6,7 @@ public class Character : Singleton<Character>
 {
     Rigidbody _rigidBody;
     Interactable _interactable;
-    Talkable _talkable;
+    Interactable _talkable;
     float vRot;
 
     public Grabbable ObjectInHand { get; private set; }
@@ -79,7 +79,7 @@ public class Character : Singleton<Character>
         Physics.SphereCast(Camera.main.transform.position, .25f, Camera.main.transform.forward, out RaycastHit hit, 2, LayerMask.GetMask("Talkable"));
         if (hit.collider != null)
         {
-            var newTalkable = hit.collider.gameObject.GetComponentInParent<Talkable>();
+            var newTalkable = hit.collider.gameObject.GetComponentInParent<Interactable>();
 
             if (newTalkable == _talkable)
                 return;
@@ -107,7 +107,7 @@ public class Character : Singleton<Character>
     {
         CheckTalkables();
         //Press F to talk
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && _talkable != null)
         {
             _talkable.Interact();
         }

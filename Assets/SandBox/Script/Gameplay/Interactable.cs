@@ -30,6 +30,8 @@ public class Interactable : MonoBehaviour
     public event Action OnInteract;
     public event Action OnShowTooltip;
 
+    public string[] messages;
+
     InteractableState _currentState;
 
     private void Awake()
