@@ -7,12 +7,10 @@ public class Grabbable : MonoBehaviour
     [SerializeField] Vector3 grabbedPosition;
     [SerializeField] Vector3 grabbedRotation;
     [SerializeField] Vector3 grabbedScale = Vector3.one;
-
-    protected Interactable interactable;
+    [SerializeField] protected Interactable interactable;
 
     private void Awake()
     {
-        interactable = GetComponentInChildren<Interactable>();
         interactable.OnInteract += OnInteract;
         interactable.OnShowTooltip += UpdateInteractState;
 

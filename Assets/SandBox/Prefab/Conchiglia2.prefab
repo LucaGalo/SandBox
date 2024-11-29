@@ -126,6 +126,7 @@ MonoBehaviour:
   grabbedPosition: {x: 0.66, y: 0.28, z: 0.05}
   grabbedRotation: {x: 0, y: 0, z: 0}
   grabbedScale: {x: 1, y: 1, z: 1}
+  interactable: {fileID: 1484505253052772722}
 --- !u!1001 &726060220303486177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -239,6 +240,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2c355a8e2d4a6a74086913c724c6ec2c, type: 3}
+--- !u!114 &1484505253052772722 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2200428732057017747, guid: 2c355a8e2d4a6a74086913c724c6ec2c, type: 3}
+  m_PrefabInstance: {fileID: 726060220303486177}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55583e5281cdd334db68690800792c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &5321956186366496492 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4884181387594850829, guid: 2c355a8e2d4a6a74086913c724c6ec2c, type: 3}

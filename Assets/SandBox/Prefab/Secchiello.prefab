@@ -50,6 +50,7 @@ MonoBehaviour:
   grabbedPosition: {x: 0, y: 0, z: 0}
   grabbedRotation: {x: 0, y: 0, z: 0}
   grabbedScale: {x: 1, y: 1, z: 1}
+  interactable: {fileID: 7827830031402564221}
   states:
   - maxCount: 0
     graphic: {fileID: 8068828611275461529}
@@ -774,6 +775,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4884181387594850829, guid: 2c355a8e2d4a6a74086913c724c6ec2c, type: 3}
   m_PrefabInstance: {fileID: 8226800765208897518}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &7827830031402564221 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2200428732057017747, guid: 2c355a8e2d4a6a74086913c724c6ec2c, type: 3}
+  m_PrefabInstance: {fileID: 8226800765208897518}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55583e5281cdd334db68690800792c38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &8902608838298106209
 PrefabInstance:
   m_ObjectHideFlags: 0

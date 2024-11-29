@@ -8,6 +8,7 @@ public class Character : Singleton<Character>
     Interactable _interactable;
     Interactable _talkable;
     float vRot;
+    bool inputsEnabled;
 
     public Grabbable ObjectInHand { get; private set; }
 
@@ -17,16 +18,19 @@ public class Character : Singleton<Character>
 
     private void Start()
     {
+        inputsEnabled = true;
         _rigidBody = GetComponent<Rigidbody>();
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        DialogUI.Instance.OnDialogStart += () => inputsEnabled = false;
+        DialogUI.Instance.OnDialogEnd += () => inputsEnabled = true;
     }
 
     private void FixedUpdate()
     {
         UpdatePosition();
     }
-
 
     void UpdatePosition()
     {
@@ -39,6 +43,8 @@ public class Character : Singleton<Character>
     
     private void Update()
     {
+        if (!inputsEnabled) return;
+
         UpdateRotation();
         CheckInputs();
     }
