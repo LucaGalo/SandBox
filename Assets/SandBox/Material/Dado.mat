@@ -20,7 +20,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: Shader_SimmiaFinalne 3
+  m_Name: Dado
   m_Shader: {fileID: 4800000, guid: 6c046203321edf34fb092959a05e5b4a, type: 3}
   m_Parent: {fileID: 0}
   m_ModifiedSerializedProperties: 0
@@ -33,14 +33,12 @@ Material:
   - _MK_LIGHT_BANDED
   - _MK_OUTLINE_HULL_CLIP
   - _MK_OUTLINE_NOISE
-  - _MK_RECEIVE_SHADOWS
   - _MK_RIM_DEFAULT
   - _MK_SPECULAR_ISOTROPIC
   - _MK_VERTEX_ANIMATION_NOISE
   - _MK_VERTEX_ANIMATION_STUTTER
   - _MK_WRAPPED_DIFFUSE
   m_InvalidKeywords:
-  - _RECEIVESHADOWS_ON
   - _VERTEXANIMATIONSTUTTER_ON
   - _WRAPPEDLIGHTING_ON
   m_LightmapFlags: 4
@@ -56,11 +54,11 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _AlbedoMap:
-        m_Texture: {fileID: 2800000, guid: d20ecb75fdec82c4f9d3a0ee8473880b, type: 3}
+        m_Texture: {fileID: 2800000, guid: e170c57d510e239418f050f9f6426298, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BaseMap:
-        m_Texture: {fileID: 0}
+        m_Texture: {fileID: 2800000, guid: 2bf212c12ffe4ea47964e396990d2f06, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _BumpMap:
@@ -116,7 +114,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: d20ecb75fdec82c4f9d3a0ee8473880b, type: 3}
+        m_Texture: {fileID: 2800000, guid: e170c57d510e239418f050f9f6426298, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -186,7 +184,7 @@ Material:
     m_Ints: []
     m_Floats:
     - _AddPrecomputedVelocity: 0
-    - _AdvancedTab: 1
+    - _AdvancedTab: 0
     - _AlbedoMapIntensity: 1
     - _AlembicMotionVectors: 0
     - _AlphaClip: 0
@@ -201,6 +199,7 @@ Material:
     - _BlendDst: 0
     - _BlendDstAlpha: 0
     - _BlendModePreserveSpecular: 1
+    - _BlendOp: 0
     - _BlendSrc: 1
     - _BlendSrcAlpha: 1
     - _Brightness: 2.42
@@ -239,37 +238,38 @@ Material:
     - _IridescenceSmoothness: 0.5
     - _IridescenceThresholdOffset: 0
     - _Light: 2
-    - _LightBands: 5
+    - _LightBands: 2
     - _LightBandsScale: 0
-    - _LightThreshold: 0.13
+    - _LightThreshold: 1
     - _Metallic: 0
     - _NormalMapIntensity: 1
     - _OcclusionStrength: 1
     - _OptionsTab: 1
     - _Outline: 3
-    - _OutlineClipOffset: 1
+    - _OutlineClipOffset: 0.61
     - _OutlineData: 0
     - _OutlineFadeMax: 2
     - _OutlineFadeMin: 0.25
     - _OutlineNoise: 0.43
-    - _OutlineSize: 70
+    - _OutlineSize: 20
     - _OutlineTab: 1
     - _Parallax: 0.005
     - _QueueOffset: 0
-    - _ReceiveShadows: 1
+    - _ReceiveShadows: 0
     - _RenderFace: 2
     - _RenderPriority: 0
     - _Rim: 1
-    - _RimSize: 1.08
-    - _RimSmoothness: 0.5
+    - _RimSize: 5
+    - _RimSmoothness: 1
     - _RimThresholdOffset: 0.25
+    - _SampleGI: 0
     - _Saturation: 1.63
     - _SketchMapScale: 1
-    - _Smoothness: 0.13
+    - _Smoothness: 0
     - _SmoothnessTextureChannel: 0
     - _Specular: 1
     - _SpecularHighlights: 1
-    - _SpecularIntensity: 1
+    - _SpecularIntensity: 0
     - _SpecularSmoothness: 0
     - _SpecularThresholdOffset: 0.25
     - _SrcBlend: 1
@@ -286,7 +286,7 @@ Material:
     - _Surface: 0
     - _ThresholdMapScale: 1
     - _VertexAnimation: 3
-    - _VertexAnimationIntensity: 0.01
+    - _VertexAnimationIntensity: 0.062
     - _VertexAnimationStutter: 1
     - _WorkflowMode: 1
     - _WrappedLighting: 1
@@ -298,14 +298,14 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _DissolveBorderColor: {r: 1, g: 1, b: 1, a: 1}
     - _EmissionColor: {r: 0, g: 0, b: 0, a: 1}
-    - _GoochBrightColor: {r: 0.9461115, g: 0.8537736, b: 1, a: 0.7019608}
-    - _GoochDarkColor: {r: 0.122641504, g: 0.03991634, b: 0.06693549, a: 1}
+    - _GoochBrightColor: {r: 0, g: 0, b: 0, a: 1}
+    - _GoochDarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _IridescenceColor: {r: 0.3066038, g: 0.41992304, b: 1, a: 0.5}
-    - _OutlineColor: {r: 0.3764706, g: 0.13670747, b: 0.10196078, a: 1}
+    - _OutlineColor: {r: 0.36717218, g: 0.13416696, b: 0.4245283, a: 1}
     - _RimBrightColor: {r: 1, g: 0.71829903, b: 0.4481132, a: 1}
-    - _RimColor: {r: 0.9150943, g: 0.44459772, b: 0.7536366, a: 1}
+    - _RimColor: {r: 1, g: 1, b: 1, a: 0}
     - _RimDarkColor: {r: 0, g: 0, b: 0, a: 1}
     - _SpecColor: {r: 0.19999996, g: 0.19999996, b: 0.19999996, a: 1}
     - _SpecularColor: {r: 0.19999993, g: 0.19999993, b: 0.19999993, a: 1}
-    - _VertexAnimationFrequency: {r: 1.61, g: 1, b: 1, a: 0}
+    - _VertexAnimationFrequency: {r: 1.61, g: 1.61, b: 1.61, a: 0}
   m_BuildTextureStacks: []

@@ -3,14 +3,15 @@ using UnityEngine;
 
 public class MaterialAnimation : MonoBehaviour
 {
-    const float FRAME_RATE = 3;
     [SerializeField] Texture[] textures;
     [SerializeField] Renderer myRenderer;
+    [SerializeField] float fpm;
 
     Coroutine _coroutine;
 
     private void Start()
     {
+        StopAllCoroutines();
         StartAnimation();
     }
 
@@ -30,8 +31,9 @@ public class MaterialAnimation : MonoBehaviour
         int textureIndex = 0;
         while(true)
         {
-            myRenderer.material.mainTexture = textures[textureIndex];
-            yield return new WaitForSeconds(1f/FRAME_RATE);
+            if(myRenderer != null && textures.Length > 0)
+                myRenderer.sharedMaterial.mainTexture = textures[textureIndex];
+            yield return new WaitForSeconds(60f/fpm);
             textureIndex = (textureIndex + 1) % textures.Length;
         }
     }
