@@ -127,6 +127,7 @@ MonoBehaviour:
   grabbedRotation: {x: 0, y: 0, z: 0}
   grabbedScale: {x: 1, y: 1, z: 1}
   interactable: {fileID: 1484505253052772722}
+  model: {fileID: 2075759922059532714}
 --- !u!1001 &726060220303486177
 PrefabInstance:
   m_ObjectHideFlags: 0

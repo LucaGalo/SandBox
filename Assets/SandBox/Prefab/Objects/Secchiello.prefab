@@ -51,6 +51,7 @@ MonoBehaviour:
   grabbedRotation: {x: 0, y: 0, z: 0}
   grabbedScale: {x: 1, y: 1, z: 1}
   interactable: {fileID: 7827830031402564221}
+  model: {fileID: 1332147292792012647}
   states:
   - maxCount: 0
     graphic: {fileID: 8068828611275461529}

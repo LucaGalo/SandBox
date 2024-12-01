@@ -17,6 +17,7 @@ public class Character : Singleton<Character>
     [SerializeField] float runSpeed;
     [SerializeField] float rotSpeed;
     [SerializeField] Transform hand;
+    [SerializeField] Transform head;
 
     private void Start()
     {
@@ -57,12 +58,12 @@ public class Character : Singleton<Character>
         transform.Rotate(Vector3.up * Input.GetAxis("Mouse X") * rotSpeed * Time.deltaTime); 
         vRot -= Input.GetAxis("Mouse Y") * rotSpeed * Time.deltaTime;
         vRot = Mathf.Clamp(vRot, -60, 60);
-        Camera.main.transform.localRotation = Quaternion.Euler(Vector3.right * vRot);
+        head.localRotation = Quaternion.Euler(Vector3.right * vRot);
     }
 
     void CheckInteractables()
     {
-        Physics.SphereCast(Camera.main.transform.position, .25f, Camera.main.transform.forward, out RaycastHit hit, 2, LayerMask.GetMask("Interactable"));
+        Physics.SphereCast(head.position, .25f, head.forward, out RaycastHit hit, 2, LayerMask.GetMask("Interactable"));
         if (hit.collider != null)
         {
             var newInteractable = hit.collider.gameObject.GetComponentInParent<Interactable>();
@@ -85,7 +86,7 @@ public class Character : Singleton<Character>
 
     void CheckTalkables()
     {
-        Physics.SphereCast(Camera.main.transform.position, .25f, Camera.main.transform.forward, out RaycastHit hit, 2, LayerMask.GetMask("Talkable"));
+        Physics.SphereCast(head.position, .25f, head.forward, out RaycastHit hit, 2, LayerMask.GetMask("Talkable"));
         if (hit.collider != null)
         {
             var newTalkable = hit.collider.gameObject.GetComponentInParent<Interactable>();

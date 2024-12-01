@@ -94,6 +94,7 @@ MonoBehaviour:
   grabbedRotation: {x: 0, y: 0, z: 0}
   grabbedScale: {x: 1, y: 1, z: 1}
   interactable: {fileID: 5085186496680262255}
+  model: {fileID: 20880127455134872}
 --- !u!1 &7339670044120641531
 GameObject:
   m_ObjectHideFlags: 0

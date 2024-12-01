@@ -8,6 +8,10 @@ public class Grabbable : MonoBehaviour
     [SerializeField] Vector3 grabbedRotation;
     [SerializeField] Vector3 grabbedScale = Vector3.one;
     [SerializeField] protected Interactable interactable;
+    [SerializeField] GameObject model;
+
+    public Vector3 GrabbedPosition => grabbedPosition;
+    public Vector3 GrabbedRotation => grabbedRotation;
 
     private void Awake()
     {
@@ -41,6 +45,13 @@ public class Grabbable : MonoBehaviour
         transform.localPosition = useOffset ? grabbedPosition : Vector3.zero;
         transform.localEulerAngles = useOffset ? grabbedRotation : Vector3.zero;
         transform.localScale = useOffset ? grabbedScale : Vector3.one;
+
+        //Set UI layer to see it always in overlay
+        model.layer = 5;
+        foreach (Transform child in model.transform)
+        {
+            child.gameObject.layer = 5;
+        }
     }
 
     public void Release()
@@ -55,6 +66,12 @@ public class Grabbable : MonoBehaviour
             transform.position = hit.point;
             transform.rotation = Quaternion.identity;
             transform.localScale = Vector3.one;
+        }
+        //Set UI layer to see it always in overlay
+        model.layer = 0;
+        foreach (Transform child in model.transform)
+        {
+            child.gameObject.layer = 0;
         }
     }
 }
