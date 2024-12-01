@@ -18,20 +18,22 @@ public class Character : Singleton<Character>
     [SerializeField] float rotSpeed;
     [SerializeField] Transform hand;
     [SerializeField] Transform head;
+    [SerializeField] PauseUI pauseUI;
 
     private void Start()
     {
-        inputsEnabled = true;
         _rigidBody = GetComponent<Rigidbody>();
-        Cursor.lockState = CursorLockMode.Locked;
-        Cursor.visible = false;
 
+        inputsEnabled = false;
         DialogUI.Instance.OnDialogStart += () => inputsEnabled = false;
         DialogUI.Instance.OnDialogEnd += () => inputsEnabled = true;
+        GameManager.Instance.OnStartGame += () => SetPause(false);
     }
 
     private void FixedUpdate()
     {
+        if (!inputsEnabled) return;
+
         UpdatePosition();
     }
 
@@ -47,10 +49,29 @@ public class Character : Singleton<Character>
     
     private void Update()
     {
+        if (!GameManager.Instance.IsGameStarted) return;
+
         if (!inputsEnabled) return;
 
+        CheckPause();
         UpdateRotation();
         CheckInputs();
+    }
+
+    void CheckPause()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            SetPause(true);
+        }
+    }
+
+    public void SetPause(bool isPaused)
+    {
+        inputsEnabled = !isPaused;
+        Cursor.lockState = !isPaused ? CursorLockMode.Locked : CursorLockMode.None;
+        Cursor.visible = isPaused;
+        pauseUI.SetVisible(isPaused);
     }
 
     void UpdateRotation()

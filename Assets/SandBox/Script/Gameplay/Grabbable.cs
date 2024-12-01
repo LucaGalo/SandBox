@@ -9,7 +9,9 @@ public class Grabbable : MonoBehaviour
     [SerializeField] Vector3 grabbedScale = Vector3.one;
     [SerializeField] protected Interactable interactable;
     [SerializeField] GameObject model;
+    bool isGrabbed;
 
+    public bool IsGrabbed => isGrabbed;
     public Vector3 GrabbedPosition => grabbedPosition;
     public Vector3 GrabbedRotation => grabbedRotation;
 
@@ -40,6 +42,7 @@ public class Grabbable : MonoBehaviour
 
     public void Grab(Transform hand, bool useOffset = true)
     {
+        isGrabbed = true;
         interactable.gameObject.SetActive(false);
         transform.parent = hand;
         transform.localPosition = useOffset ? grabbedPosition : Vector3.zero;
@@ -56,6 +59,7 @@ public class Grabbable : MonoBehaviour
 
     public void Release()
     {
+        isGrabbed = false;
         interactable.gameObject.SetActive(true);
         Vector3 camForward = Camera.main.transform.forward;
         Vector3 dropPos = transform.position + new Vector3(camForward.x, 0, camForward.z).normalized;

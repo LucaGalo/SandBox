@@ -9,12 +9,6 @@ public class Cannocchiale : Usable
     [SerializeField] Vector3 endPos;
     [SerializeField] Vector3 endRot;
 
-    Grabbable grabbable;
-
-    private void Awake()
-    {
-        grabbable = GetComponent<Grabbable>();
-    }
 
     protected override bool CheckUsability()
     {
@@ -49,9 +43,16 @@ public abstract class Usable : MonoBehaviour
 {
     bool isUsed;
 
+    protected Grabbable grabbable;
+
+    private void Awake()
+    {
+        grabbable = GetComponent<Grabbable>();
+    }
+
     private void Update()
     {
-        if (Input.GetMouseButtonDown(1) && CheckUsability())
+        if (Input.GetMouseButtonDown(1) && CheckUsability() && grabbable.IsGrabbed)
         {
             isUsed = true;
             StartUse();

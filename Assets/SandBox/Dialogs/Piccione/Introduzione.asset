@@ -15,5 +15,5 @@ MonoBehaviour:
   state: 0
   nextState: 1
   messages:
-  - che <shake>ssimmia</shake> guardi
+  - che <shake a:3>ssimmia</shake> guardi
   - Smettila! <rot>Girati!</rot>
