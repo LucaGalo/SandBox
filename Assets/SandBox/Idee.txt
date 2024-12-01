@@ -1,3 +1,18 @@
+Task:
+- Introduzione al gioco in cui il dado ti spiega chi sei, dove sei, cosa devi fare (dal suo pinto di vista manipolatorio malvagio)
+- Pensare un modo per fare arrivare i personaggi sull'isola (come, quando, ogni quanto, ecc)
+
+- Puoi seguire le istruzioni del dado e incitarli a buttarsi di sotto oppure scoprire tramite dialoghi e altro il finale alternativo
+- Rendiamo rapide le interazioni player-NPC per buttarsi di sotto (o trovare un modo non noioso per farlo)
+
+
+
+
+
+
+
+
+
 Strumenti:
 Un metaldetector
 cannocchiale
