@@ -13,7 +13,10 @@ public class Grabbable : MonoBehaviour
     {
         interactable.OnInteract += OnInteract;
         interactable.OnShowTooltip += UpdateInteractState;
+    }
 
+    private void OnEnable()
+    {
         Physics.Raycast(transform.position, -transform.up, out RaycastHit hit, 100, LayerMask.GetMask("Default"));
         if (hit.collider != null)
         {

@@ -9,10 +9,12 @@ public class Character : Singleton<Character>
     Interactable _talkable;
     float vRot;
     bool inputsEnabled;
+    float moveSpeed;
 
     public Grabbable ObjectInHand { get; private set; }
 
-    [SerializeField] float moveSpeed;
+    [SerializeField] float normalSpeed;
+    [SerializeField] float runSpeed;
     [SerializeField] float rotSpeed;
     [SerializeField] Transform hand;
 
@@ -34,6 +36,7 @@ public class Character : Singleton<Character>
 
     void UpdatePosition()
     {
+        moveSpeed = Input.GetKey(KeyCode.LeftShift) ? runSpeed : normalSpeed;
         var dir = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         dir.Normalize();
         dir *= moveSpeed * Time.fixedDeltaTime;
