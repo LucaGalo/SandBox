@@ -46,7 +46,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   interactable: {fileID: 6274240667836530033}
-  dialogs: []
+  dialogs:
+  - {fileID: 11400000, guid: db3453185bca29f4bae07829737a32b3, type: 2}
+  - {fileID: 11400000, guid: f2762782fdb32614b98acfdf137c30be, type: 2}
 --- !u!1 &1784711943881476468
 GameObject:
   m_ObjectHideFlags: 0
