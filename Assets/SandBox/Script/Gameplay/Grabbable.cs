@@ -50,11 +50,14 @@ public class Grabbable : MonoBehaviour
         transform.localScale = useOffset ? grabbedScale : Vector3.one;
 
         //Set UI layer to see it always in overlay
-        model.layer = 5;
-        foreach (Transform child in model.transform)
-        {
-            child.gameObject.layer = 5;
-        }
+        SetLayer(model, 5);
+    }
+
+    void SetLayer(GameObject go, int layer)
+    {
+        go.layer = layer;
+        foreach (Transform child in go.transform)
+            SetLayer(child.gameObject, layer);
     }
 
     public void Release()
@@ -72,10 +75,6 @@ public class Grabbable : MonoBehaviour
             transform.localScale = Vector3.one;
         }
         //Set UI layer to see it always in overlay
-        model.layer = 0;
-        foreach (Transform child in model.transform)
-        {
-            child.gameObject.layer = 0;
-        }
+        SetLayer(model, 0);
     }
 }
